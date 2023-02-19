@@ -1,0 +1,7 @@
+{
+  "secret_key": "MoYanStudio@2010@1234",
+  "port": "80",
+  "host": "0.0.0.0",
+  "Token_expiration_time": "90",
+  "HTTPS": "False"
+}
