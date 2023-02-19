@@ -1,0 +1,56 @@
+#title{
+	font-family: "幼圆";
+	font-weight: 900;
+	font-size: 50px;
+	text-align: center;
+	color: white;
+}
+.search {
+	padding: 0;
+	margin: 0;
+	width: 30%;
+	margin: 100px auto;
+	display: flex;
+	/*border: 1px solid red;*/
+	border-radius: 30px;
+}
+
+.search input {
+	padding: 0;
+	margin: 0;
+	border-radius: 30px 0px 0px 30px;
+	float: left;
+	/* 左浮动 */
+	flex: 4;
+	height: 35px;
+	outline: none;
+	border: 1px solid skyblue;
+	box-sizing: border-box;
+	padding-left: 10px;
+
+}
+
+.search button {
+	padding: 0;
+	margin: 0;
+	float: right;
+	flex: 1;
+	height: 35px;
+	background-color: skyblue;
+	color: white;
+	border-style: none;
+	outline: none;
+	border-radius: 0px 30px 30px 0px;
+}
+
+.search button i {
+	padding: 0;
+	margin: 0;
+	font-style: normal;
+}
+
+.search button:hover {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+}
