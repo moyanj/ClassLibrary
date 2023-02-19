@@ -1,0 +1,63 @@
+{% macro header() %}
+<link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet" type="text/css">
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cookie.js') }}"></script>
+<style>
+		#headers{
+			background-color: white;
+		}
+		li
+		{
+		    float:left;
+			
+		}
+		a
+		{
+			height: 10px;
+		    display:block;
+		}
+		img
+		{
+		    float:left;
+		}
+
+</style>
+<script>
+    
+    	function checktoken() {
+    		var token = getCookie("token");
+    		if (token != "") {
+    			document.write('<a target="_blank" style="color:#94591b;">已登录</a>');
+    		} else {
+    			document.write('<a href="login" target="_blank" style="color:#94591b;">登录</a>');
+    		}
+    	}
+
+</script>
+<div class="header mobile-header" id="headers">
+    <div class="clearfix">
+        <a href="{{url}}">
+            <img height="44px" src="{{ url_for('static', filename='image/logo.png') }}" width="141px">
+        </a>
+        <ul class="mobile-nav mui-pull-right mui-list-inline">
+            <li>
+                <a href="/" target="_blank">首页</a>
+            </li>
+            <li>
+                <a href="data" target="_blank">同学们</a>
+            </li>
+            <li>
+                <a href="group" target="_blank">班级合照</a>
+            </li>
+            <li>
+                <script>
+    					checktoken()
+
+                </script>
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endmacro %}

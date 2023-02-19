@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>班级资料库</title>
+		{% import 'macro.html' as f %}
+		{{f.header()}}
+		<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css">
+		<script src="{{ url_for('static', filename='js/cookie.js') }}"></script>
+		<script>
+			token = getCookie('token')
+			console.log(token)
+			if (token == "") {
+				window.location.href = 'login'
+			} else {
+				var url = "token/verify?token=" + token
+				$.get(url, function(data) {
+					console.log(data)
+					if (data == "Yes"){
+						console.log("已登录")
+					}
+						
+					else if(data == "No"){
+						alert("登录失效")
+						window.location.href = 'login'
+					}
+				})
+
+			}
+
+			function search() {
+				// 获取搜索框内容
+				var text = document.getElementById("searchs").value;
+				if (text == "") {
+					// 防止跳转至必应首页
+					alert("未输入文字");
+				} else {
+					url = "{{url}}/getpy?text=" + text
+					$.get(url, function(data) {
+						window.location.href = '/data/' + data;
+					})
+				}
+			}
+		</script>
+		<style>
+			body {
+				background:url("{{ url_for('static', filename='image/back.jpg') }}");
+			}
+		</style>
+	</head>
+	<body>
+		<br>
+		<br>
+		<!-- 标题 -->
+		<div id="main">
+			<h1 id="title">2017级2班班级资料库</h1>
+			<br>
+			<div class="search">
+				<input id="searchs" placeholder="请输入您的名字" type="text" />
+				<button id="sercs" onclick="search()">搜索</button>
+			</div>
+		</div>
+
+	</body>
+</html>

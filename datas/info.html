@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css">
+    <title>{{names}}的个人主页-班级资料库</title>
+	{% import 'macro.html' as f %}
+	{{f.header()}}
+</head>
+<body>
+<!--    <iframe src="{{url}}/base" height=4% width="100%"></iframe>-->
+
+
+<img height=16% src="{{ selfie }}" width="9%">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div align="left">
+    <h3>姓名：{{names}}</h3>
+    <br>
+    <h3>网名：{{net_name}}</h3>
+    <br>
+    <h3>性别：{{gender}}</h3>
+    <br>
+    <h3>手机号：{{TEL}}</h3>
+    <br>
+    <h3>邮箱：{{email}}</h3>
+    <br>
+    <h3>地址：{{address}}</h3>
+    <br>
+    <h3>生日：{{birthday}}</h3>
+    <br>
+    <h3>微信：{{wechat}}</h3>
+    <br>
+    <h3>抖音：{{tiktok}}</h3>
+    <br>
+    <h3>钉钉：{{dingtalk}}</h3>
+    <br>
+    <h3>快手：{{kuaishou}}</h3>
+    <br>
+    <h3>小红书：{{LRB}}</h3>
+</div>
+
+
+
+
+
+</body>
+</html>
